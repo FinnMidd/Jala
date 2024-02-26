@@ -1,0 +1,83 @@
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes growIn {
+    from {transform: scale(0.9);}
+    to {transform: scale(1);}
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.game-container {
+    width: 60vw;
+    margin: 10px 0;
+    padding: 10px 20px;
+
+    /* border: 2px solid red; */
+    background-color: white;
+
+    border-radius: 7px;
+    box-shadow:  0 10px 20px -1px #bebebe;
+
+    animation: fadeIn 0.6s ease-in-out forwards, growIn 0.6s ease-in-out forwards;
+    opacity: 0;
+}
+
+.game-container p {
+    margin: 3px 0;
+}
+
+.winner {
+    color: rgb(86, 187, 86);
+    text-decoration: underline;
+}
+
+.loser {
+    color: red;
+    text-decoration: underline;
+}
+
+.player-link {
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.player-link:hover {
+    color: blue;
+}
+
+h4 {
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+footer p {
+    color: #e4e4e4;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    margin: auto 0 0 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+
+    opacity: 0;
+
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.me {
+    text-decoration: none;
+    color: #e4e4e4;
+}
