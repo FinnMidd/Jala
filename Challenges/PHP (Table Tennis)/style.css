@@ -13,9 +13,9 @@ body {
     flex-direction: column;
     align-items: center;
 
-    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .game-container {
@@ -23,7 +23,7 @@ body {
     margin: 10px 0;
     padding: 10px 20px;
 
-    /* border: 2px solid red; */
+    /* border: 2px solid red;  */
     background-color: white;
 
     border-radius: 7px;
@@ -61,7 +61,6 @@ h4 {
 }
 
 footer p {
-    color: #e4e4e4;
     font-size: small;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -80,4 +79,11 @@ footer {
 .me {
     text-decoration: none;
     color: #e4e4e4;
+    transition: 0.4s ease-in-out;
+    display: inline-block;
+}
+.me:hover {
+    color: #bdbdbd;
+    transform: translateY(-2px);
+    text-shadow: 1px 1px 2px rgba(204, 204, 204, 0.5);
 }
