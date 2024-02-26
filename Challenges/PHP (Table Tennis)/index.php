@@ -16,7 +16,6 @@
         }
     }
     
-    
     function getPlayerGames($id) {
         // Define variables & arrays
         $filename = "snippet_data.json";

@@ -51,3 +51,5 @@ The following is a list of technical skills which link to the generic Jala Desig
 ### Finalised Package
 
 Please package up your finalised challenge and then send back to [careers@jaladesign.com.au](mailto:careers@jaladesign.com.au) prior to our in person meeting.
+
+[Challenge link](https://bitbucket.org/jala-design/workspace/snippets/EdRjkK/technical-challenge-backend)
