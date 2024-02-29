@@ -4,97 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <?php
-    //* Backend Table Tennis Code
-    function getPlayerName($id, $players_array) {
-        foreach ($players_array as $player) {
-            if ($id == $player['id']) {
-                return $player['firstName'] . " " . $player['lastName'];
-            }
-        }
-    }
 
-    function getPlayerGames($id) {
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script rel="preconnect" src="https://kit.fontawesome.com/e17e3207d2.js" crossorigin="anonymous"></script>
+</head>
+<body >
+    <section id="nav" class="animate-fade test">
+        <div>
+            <div id="search-box" class="search-box">
+                <div class="row shadow">
+                    <input type="text" name="input-box" id="input-box" placeholder="Search player..." autocomplete="off">
+                    <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="result-box shadow test">
+                    <ul class="test">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leader_board" class="test">
+        
+        <?php
+        //* Backend Table Tennis Code
+        //* -------------------------
+
         // Define variables & arrays
         $filename = "snippet_data.json";
         $json_data = file_get_contents($filename);
         $decode_data = json_decode($json_data, true);
         $players_array = $decode_data["players"];
-        $games_array = $decode_data["games"];
-        $player_games = [];
+
+        //  Get Img from player ID
+        function idToImg($id) {
+            return "img/profile_$id.png";
+        }
 
         // Check ID is valid & update status
         foreach ($players_array as $player) {
-            if ($id == $player['id']) {
-                $valid_status = true;
-                break;
-            } else {
-                $valid_status = false;
-            }
+            echo "<div class='player_row animate-fade'>";
+            echo "<div class='player_img shadow'><img src=" . idToImg($player['id']) . " alt='profile picture'></div>";
+            echo "<div class='player_card shadow'>";
+            echo "<p data-id='".$player['id']."'><span style='font-weight: bold; '>".$player['firstName']." ".$player['lastName']."</span></p>";
+            echo "<p><span class='winner test'>Wins: 100</span> | <span class='loser'>Losses: 0</span></p>";
+            echo "<p class='secondary-stats'>Total points: 1,234</p>";
+            echo "</div>";
+            echo "</div>";
         }
+        ?>
 
-        // Check status
-        if ($valid_status == false) {
-            echo "<p>ID not found</p>";
-        } else {
-            echo "<h4>Player #$id (" . getPlayerName($id, $players_array) . ") found.</h4>";
-            // Loop through games array
-            foreach ($games_array as $game) {
-                // Check if ID is found in any game stats
-                if ($id == $game['winnerId'] || $id == $game['loserId']) {
-                    // Add the game object to player_games
-                    $player_games[] = $game;
-                }
-            }
-
-            // If no games found
-            if (empty($player_games)) {
-                echo "<p>This player has no recorded games</p>";
-            } else {
-                // If games found
-                // for each game echo stats within a div
-                foreach ($player_games as $game) {
-                    // Echo container & score
-                    echo "<div class='game-container'>";
-                    echo "<p><span style='font-weight: bold; '>Tournament Match</span></p>";
-                    echo "<p>Score: " . $game['winnerScore'] . " - " . $game['loserScore'] . "</p>";
-
-                    // Highlight player outcome
-                    if ($game['winnerId'] == $id) {
-                        echo "<p><span class='winner'>Winner: " . " " . getPlayerName($game['winnerId'], $players_array) . "</span></p>";
-                        echo "<p>Loser: <a class='player-link' href='?id=" . $game['loserId'] . "'>" . getPlayerName($game['loserId'], $players_array) . "</a></p>";
-                    } else {
-                        echo "<p>Winner: <a class='player-link' href='?id=" . $game['winnerId'] . "'>" . getPlayerName($game['winnerId'], $players_array) . "</a></p>";
-                        echo "<p><span class='loser'>Loser: " . getPlayerName($game['loserId'], $players_array) . "</span></p>";
-                    }
-                    echo "</div>";
-                }
-                echo "<br>";
-            }
-        }   
-    }
-
-    //! Test
-    // Check if page is loaded via hyperlink
-    if (isset($_GET['id'])) {
-        // Get ID from url
-        $id = $_GET['id'];
-        // Run function
-        getPlayerGames($id);
-    } else {
-        //* Manual input here
-        getPlayerGames(2127);
-    }
-
-    ?>
+    </section>
 
     <footer>
         <p><a href="https://github.com/FinnMidd/Jala" class="me">&copy; Finn Middleton 2024</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/auto_complete.js"></script>
+    <script src="js/icon_check.js"></script>
 </body>
 </html>
+
+
