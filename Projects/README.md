@@ -1,5 +1,5 @@
 # Project Directory
-This directory contains the larger projects worked on during my internships and exists for the purpose of displaying my progress as a web developer.
+This directory contains the larger projects worked on during my internship and exists for the purpose of displaying my progress as a web developer.
 
 ## Projects
 | **Project Name**   | **Description**                                                                       |             **Link**            |
