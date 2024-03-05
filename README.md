@@ -7,8 +7,6 @@ This repository contains exercises and projects completed during my internship a
 -   [**`Exercises`**](Exercises): Contains smaller programming tasks and coding exercises assigned during the internship.
 -   [**`Documentation`**](Documentation): Stores relevant documents, reports, and guides related to the projects.
 
-[`Click`](Front%20End%20(SCSS))
-
 ## Getting Started
 
 Explore the directories to review the projects and exercises worked on. Each directory may contain its own README file for further details.
