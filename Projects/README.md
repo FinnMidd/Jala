@@ -2,11 +2,10 @@
 This directory contains the larger projects worked on during my internships and exists for the purpose of displaying my progress as a web developer.
 
 ## Projects
-| **Project Name**   | **Description**                                                                       | **Link** |
-|--------------------|---------------------------------------------------------------------------------------|:--------:|
-| Backend Challenge  | Create a php script that can look up & display player details from a local JSON file. |   Click  |
-| Frontend Challenge | Convert a Figma website mockup into a responsive page.f                               |   Click  |
-|                    | More soon...                                                                          |          |
+| **Project Name**   | **Description**                                                                       |             **Link**            |
+|--------------------|---------------------------------------------------------------------------------------|:-------------------------------:|
+| Backend Challenge  | Create a php script that can look up & display player details from a local JSON file. | [Click](Table%20Tennis%20(PHP)) |
+| Frontend Challenge | Convert a Figma website mockup into a responsive page.                                |  [Click](Front%20End%20(SCSS))  |
 
 ## Getting Started
 
