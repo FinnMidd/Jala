@@ -3,9 +3,11 @@ This repository contains exercises and projects completed during my internship a
 
 ## Structure
 
--   **`Projects`**: Includes larger projects and assignments undertaken during the internship period.
--   **`Exercises`**: Contains smaller programming tasks and coding exercises assigned during the internship.
--   **`Documentation`**: Stores relevant documents, reports, and guides related to the projects.
+-   [**`Projects`**](Projects): Includes larger projects and assignments undertaken during the internship period.
+-   [**`Exercises`**](Exercises): Contains smaller programming tasks and coding exercises assigned during the internship.
+-   [**`Documentation`**](Documentation): Stores relevant documents, reports, and guides related to the projects.
+
+[`Click`](Front%20End%20(SCSS))
 
 ## Getting Started
 
