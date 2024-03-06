@@ -4,7 +4,7 @@ This directory contains the smaller exercises worked on during my internship and
 ## Exercises
 | **Exercise Name**  | **Description**                                                                |             **Link**            |
 |--------------------|--------------------------------------------------------------------------------|:-------------------------------:|
-| **`CSS Diner`**          | Practice your CSS selector knowledge by selecting fruit from a diner           | [Click](https://flukeoutC.github.io/) |
+| **`CSS Diner`**          | Practice your CSS selector knowledge by selecting fruit from a diner           | [Click](https://flukeout.github.io/) |
 | **`Flexbox Froggy`**     | Help the frogs move around the pond using CSS Flexbox                          | [Click](https://flexboxfroggy.com/)   |
 | **`Flexbox Zombies`**    | Survive the zombie apocalypse by using your Flexbox knowledge                  | [Click](https://mastery.games/post/flexboxzombies2/) |
 | **`CSS Grid Garden`**    | Take care of your garden by practicing CSS Grid                                | [Click](https://cssgridgarden.com/)   |
