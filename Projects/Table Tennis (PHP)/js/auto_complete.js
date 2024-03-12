@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const playerId = item.id;
     
             // Build the HTML string with the player name and id wrapped in <p> tags
-            return "<li onclick='alert(" + "Test" + ")' data-player-id='" + playerId + "'>" +
+            return "<li data-player-id='" + playerId + "'>" +
                         "<p class='player-name'>" + playerName + "</p>" +
                         "<p class='player-id'>#" + playerId + "</p>" +
                     "</li>";

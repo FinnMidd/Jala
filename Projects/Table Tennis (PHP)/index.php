@@ -3,60 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document Test</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script rel="preconnect" src="https://kit.fontawesome.com/e17e3207d2.js" crossorigin="anonymous"></script>
 </head>
 <body >
-    <section id="nav" class="animate-fade test">
+
+    <section id="nav" class="animate-fade">
         <div>
             <div id="search-box" class="search-box">
                 <div class="row shadow">
                     <input type="text" name="input-box" id="input-box" placeholder="Search player..." autocomplete="off">
                     <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="result-box shadow test">
-                    <ul class="test">
+                <div class="result-box shadow">
+                    <ul>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="leader_board" class="test">
+    <section id="leader_board">
         
         <?php
-        //* Backend Table Tennis Code
-        //* -------------------------
+        //* ------------------------------ *//
+        //* Backend Table Tennis Challenge *//
+        //* ------------------------------ *//
+
+        // include functions file
+        include 'functions.php';
 
         // Define variables & arrays
-        $filename = "snippet_data.json";
-        $json_data = file_get_contents($filename);
-        $decode_data = json_decode($json_data, true);
+        $decode_data = read_json("snippet_data.json");
         $players_array = $decode_data["players"];
+        $games_array = $decode_data["games"];
 
-        //  Get Img from player ID
-        function idToImg($id) {
-            return "img/profile_$id.png";
-        }
+        $stat_page = "statistics.php";
 
         // Check ID is valid & update status
         foreach ($players_array as $player) {
-            echo "<div class='player_row animate-fade'>";
-            echo "<div class='player_img shadow'><img src=" . idToImg($player['id']) . " alt='profile picture'></div>";
-            echo "<div class='player_card shadow'>";
-            echo "<p data-id='".$player['id']."'><span style='font-weight: bold; '>".$player['firstName']." ".$player['lastName']."</span></p>";
-            echo "<p><span class='winner test'>Wins: 100</span> | <span class='loser'>Losses: 0</span></p>";
-            echo "<p class='secondary-stats'>Total points: 1,234</p>";
-            echo "</div>";
-            echo "</div>";
+            // define variables
+            $id = $player['id'];
+            $fname = $player['firstName'];
+            $lname = $player['lastName'];
+            $wins = $player['wins'];
+            $losses = $player['losses'];
+
+
+            // echo container
+            echo <<<HTML
+
+            <div class='player_row animate-fade'>
+                <div class='player_img shadow'><img src="img/profile_$id.png" alt='profile picture'></div>
+                <div class='player_card shadow' onclick="window.location.href='statistics.php?id=$id'">
+                    <div class='text-container'>
+                        <p data-id='$id'>$fname $lname</p>
+                        <p><span class='winner'>Wins: 100</span> <span class='loser'>Losses: 0</span></p>
+                        <p class='secondary-stats'>Total points: 1,234</p>
+                    </div>
+                    <aside>
+                        <button><img src='img/trace.svg' alt='arrow icon' class='link-arrow'></button>
+                    </aside>
+                </div>
+            </div>
+
+            HTML;
         }
+
         ?>
 
     </section>

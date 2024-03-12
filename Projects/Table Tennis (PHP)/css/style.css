@@ -1,19 +1,67 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-@keyframes growIn {
-  from {
-    transform: scale(0.9);
-  }
-  to {
-    transform: scale(1);
-  }
+
+/*
+2. Remove default margin
+*/
+* {
+  margin: 0;
 }
+
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/*
+! testing tools
+*/
+.test {
+  border: 2px solid red;
+}
+
+.hide {
+  display: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -34,16 +82,6 @@ body {
 
 .shadow {
   box-shadow: 0 10px 20px -1px #bebebe;
-}
-
-.player-link {
-  color: black;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.player-link:hover {
-  color: blue;
 }
 
 h4 {
@@ -144,6 +182,7 @@ i {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 0 0 7px 7px;
 }
 #search-box .result-box ul li {
   width: 100%;
@@ -157,7 +196,7 @@ i {
   transition: 0.1s;
 }
 #search-box .result-box ul li:hover {
-  background-color: #f4ffec;
+  background-color: rgb(241, 255, 232);
 }
 #search-box .result-box ul li:not(:last-child) {
   border-bottom: 1px solid #f1f1f1;
@@ -183,7 +222,7 @@ i {
 #leader_board .player_row:nth-child(n+2) {
   margin-top: 10px;
 }
-#leader_board div {
+#leader_board .player_row {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 10px;
@@ -215,30 +254,67 @@ i {
 }
 #leader_board div .player_card {
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#leader_board div .player_card:hover {
+  transform: scale(1.02);
+}
+#leader_board div .player_card .text-container {
   display: flex;
   flex-flow: column;
   justify-content: center;
   gap: 0;
-  border-radius: 7px;
+  width: auto;
+  height: 100%;
 }
-#leader_board div .player_card p {
-  margin: 2px 15px;
+#leader_board div .player_card .text-container:first-child {
+  font-weight: 600;
 }
-#leader_board div .player_card p.secondary-stats {
-  color: rgb(190, 190, 190);
+#leader_board div .player_card .text-container p {
+  margin: 2px 20px;
 }
-#leader_board div .player_card p span {
+#leader_board div .player_card .text-container p span {
   padding: 2px 5px;
   border-radius: 3px;
 }
-#leader_board div .player_card p span.winner {
+#leader_board div .player_card .text-container p span.winner {
   color: white;
   background-color: rgb(146, 205, 106);
 }
-#leader_board div .player_card p span.loser {
+#leader_board div .player_card .text-container p span.loser {
   color: white;
   background-color: rgb(245, 95, 95);
+}
+#leader_board div .player_card .text-container p.secondary-stats {
+  color: rgb(190, 190, 190);
+}
+#leader_board div .player_card aside {
+  height: 50px;
+  width: 50px;
+  margin: 0 25px 0 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+#leader_board div .player_card aside button {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#leader_board div .player_card aside button img {
+  width: 20px;
+  height: 20px;
+  filter: invert(83%) sepia(0%) saturate(1245%) hue-rotate(227deg) brightness(91%) contrast(94%);
+  transition: 0.4s ease-in-out;
 }
 
 footer {
